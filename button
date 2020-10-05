@@ -1,0 +1,24 @@
+.btn{
+	border-radius:5px;
+	padding:8px 16px;
+	border:1px solid lightblue;
+	color:#424949;
+	background-color:#85C1E9;
+	cursor:pointer;
+}
+.btn:hover{
+	color:white;
+	background-color:#85C1E9;
+}
+.btn:active{
+	position:relative;
+	top:2px;
+	margin-bottom:2px;
+	border-color:#85C1E9;
+	outline-color:#85C1E9;
+	border:1;
+	outline:1;
+  
+  //inset 규정된 박스내에서 명암
+	box-shadow: inset 0px 0px 8px gray;
+}
