@@ -1,0 +1,18 @@
+.lts_btn{
+  border:1px solid #cccccc;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  padding:3px 6px;
+}
+.lts_btn:hover{
+  background-color:#e5e5e5;
+}
+.lts_btn:active{
+  background-color:#f2f2f2;
+}
+.lts_btn:focus{
+  -moz-outline-style: none;
+  -webkit-outline-style: none;
+  outline:none;
+}
