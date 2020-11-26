@@ -1,0 +1,139 @@
+body{
+	margin:0;
+}
+/*mobile ui*/
+@media screen and (max-width:768px){
+	#lts_container{
+		padding:10px;
+	}
+	#lts_nav0{
+		width:100%;
+		border-bottom:1px solid #cccccc;
+	}
+	#menu_btn{
+		display:block;
+		font-size:30px;
+	}
+	.main_menu{
+		display:none;
+		list-style:none;
+		padding:0;
+	}
+	.main_menu > li > ul{
+		display:none;
+		list-style:none;
+		padding:0;
+	}
+
+	.main_menu > li:hover > ul{
+		display:block;
+	}
+}
+
+/*pc ui*/
+@media screen and (min-width:769px){
+	#lts_container{
+		padding:10px;
+	}
+	#lts_nav0{
+		width:100%;
+		border-bottom:1px solid #cccccc;
+	}
+	#menu_btn{
+		display:none;
+	}
+	.main_menu{
+		padding:0;
+		display:block !important;
+	}
+	.main_menu > li{
+		display:inline-block;
+		width:80px;
+		text-align:center;
+	}
+	.main_menu > li > ul{
+		position:absolute;
+		list-style:none;
+		padding:0;
+		opacity:0;
+		transition:all 1.5s;
+	}
+	.main_menu > li > ul > li{
+		height:0px;
+		transition:all 1.5s;
+	}
+	.main_menu > li:hover > ul{
+		opacity:1;
+		transition:all 1.5s;
+	}
+	.main_menu > li:hover > ul > li{
+		height:30px;
+		transition:all 1.5s;
+	}
+}
+
+
+
+
+
+<nav id="lts_nav0">
+	<span id="menu_btn">≡</span>
+	<ul class="main_menu">
+		<li>
+			메뉴
+			<ul>
+				<li>
+					서브메뉴1
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+			</ul>
+		</li>
+		<li>
+			메뉴
+			<ul>
+				<li>
+					서브메뉴1
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+			</ul>
+		</li>
+		<li>
+			메뉴
+			<ul>
+				<li>
+					서브메뉴1
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+			</ul>
+		</li>
+		<li>
+			메뉴
+			<ul>
+				<li>
+					서브메뉴1
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+				<li>
+					서브메뉴2
+				</li>
+			</ul>
+		</li>
+	</ul>
+</nav>
