@@ -1,0 +1,32 @@
+$(function(){
+	var tab_button = $(".tab_menu_button > button");
+	var tab_content = $(".tab_menu_content > div");
+
+	tab_content.hide().eq(0).show();
+	tab_button.eq(0).addClass("active");
+
+	tab_button.click(function(e){
+		e.preventDefault();
+		var target = $(this);
+		var index = target.index();
+
+		if(tab_content.eq(index).is(":visible") == true){			
+			tab_button.removeClass("active");
+			tab_content.eq(index).hide();
+		}else{
+			tab_button.removeClass("active");
+			target.addClass("active");
+			tab_content.css({"display":"none"});
+			tab_content.eq(index).show();
+		}
+	})
+
+	$("body").click(function(e){
+		if(!$(".tab_menu").has(e.target).length){
+			var tab_button = $(".tab_menu_button > button");
+			var tab_content = $(".tab_menu_content > div");
+			tab_button.removeClass("active");
+			tab_content.css({"display":"none"});
+		}
+	});
+})
