@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<style>
+
+.hamburger-button {position: absolute; transition: .3s ease-in-out; width: 45px; height: 34px; top: 2rem; right: 2rem; z-index: 100;}
+.hamburger-button span {position: absolute; height: 8px; border-radius: 4px; width: 100%; background: #3d4146; top: 0; transition: 0.2s;}
+.hamburger-button span:nth-child(1) {top: 0;}
+.hamburger-button span:nth-child(2), .hamburger-button span:nth-child(3) {top: 13px;}
+.hamburger-button span:nth-child(4) {top: 26px;}
+
+.logo {position: absolute; top: 0; left: 50%; transform: translate(-50%, 10%); z-index: 200;}
+.logo img {width: 100px; height: 50px;}
+
+.hamburger-button.active span {background-color: #fff;}
+.hamburger-button.active span:nth-child(1), .hamburger-button.active span:nth-child(4) {opacity: 0;}
+.hamburger-button.active span:nth-child(2) {transform: rotate(45deg);}
+.hamburger-button.active span:nth-child(3) {transform: rotate(-45deg);}
+
+.overlay {position: fixed; background: #cfcfcf; top: 0; left: 0; width: 100%; height: 94px; transition: 0.3s;}
+.menu {width: 100px; height: 100%; margin: 50% auto 50%;}
+.menu ul {list-style: none; padding: 0; margin: 0;}
+.menu ul li {margin: 1rem 0; opacity: 0;}
+.menu ul li a {text-decoration: none; color: #fff; opacity: 0.75; transition: 0.2s ease;}
+.menu ul li a:hover {opacity: 1;}
+.menu ul li ul.sub_menu {display: none;}
+.menu ul li ul.sub_menu li a {color: blueviolet;}
+
+@keyframes fadeInLeft {
+    0% {opacity: 0; transform: translateX(-25%);}
+    100% {opacity: 1; transform: translateX(0);}
+}
+.overlay.visible {
+    height: 100%;
+    opacity: .85;
+}
+.overlay.visible .menu ul li {
+    animation:fadeInLeft 0.3s ease forwards;
+}
+.overlay.visible .menu ul li:nth-child(1) {animation-delay: 0.23s;}
+.overlay.visible .menu ul li:nth-child(2) {animation-delay: 0.26s;}
+.overlay.visible .menu ul li:nth-child(3) {animation-delay: 0.29s;}
+.overlay.visible .menu ul li:nth-child(4) {animation-delay: 0.32s;}
+</style>
+<body>
+<a href="#" class="hamburger-button">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</a>
+
+<div class="logo">
+    <img src="300x300-1.png">
+</div>
+
+<div class="overlay">
+    <nav class="menu">
+        <ul>
+            <li><a href="#">회사소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">복리후생</a></li>
+                    <li><a href="#">예지블로</a></li>
+                    <li><a href="#">인재상</a></li>
+                </ul>
+            </li>
+            <li><a href="#">직무소개</a>
+                <ul class="sub_menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">복리후생</a></li>
+                    <li><a href="#">예지블로그</a></li>
+                    <li><a href="#">인재상</a></li>
+                </ul>
+            </li>
+            <li><a href="#">리쿠르팅</a>
+                <ul class="sub_menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">복리후생</a></li>
+                    <li><a href="#">예지블로그</a></li>
+                    <li><a href="#">인재상</a></li>
+                </ul>
+            </li>
+            <li><a href="#">채용정보</a>
+                <ul class="sub_menu">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">복리후생</a></li>
+                    <li><a href="#">예지블로그</a></li>
+                    <li><a href="#">인재상</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+<script>
+$(function() {
+    $(".hamburger-button").click(function(e) {
+        e.preventDefault();
+        $(this).toggleClass("active");
+        $(".overlay").toggleClass("visible");
+    })
+
+    $(".menu > ul > li").click(function() {
+        if($(this).find(".sub_menu").is(":visible") == true) {
+            $(this).find(".sub_menu").stop().slideUp();
+        }else{
+            $(this).find(".sub_menu").stop().slideDown();
+        }        
+    })
+
+})
+</script>
+</html>
