@@ -1,0 +1,49 @@
+모바일 폰트사이즈 자동변경 방지
+mj10 2016. 3. 16. 15:31
+<< -webkit-text-size-adjust- >>
+
+body{-webkit-text-size-adjust:none;}
+
+: 모바일 사파리 브라우저는 뷰포트가 변할 시 텍스트의 크기를 자동으로 조절 하는데,
+
+이때 -webkit-text-size-adjust:none; 를 이용하면 텍스트의 크기를 고정하거나 원하는 대로 조절 할 수 있습니다.
+
+
+
+1. none
+
+-webkit-text-size-adjust:none;
+
+: 글자크기 자동조절을 방지한다, 일반적으로 많이 사용합니다.
+
+
+
+
+
+2. auto
+
+-webkit-text-size-adjust:auto;
+
+: 화면의 폭에 맞춰서 텍스트의 크기를 자동으로 조절한다, 아무것도 지정하지 않았을때와 같다.
+
+
+
+3. n%
+
+-webkit-text-size-adjust:120%;
+
+: 폰트크기를 지정된 사이즈(120%)로 변경한다.
+
+
+
+* viewport 설정의 maximum-scale 에 대한 설정이 있어야 하며, maximum-scale=1.0 이하여야만 적용이 됩니다.
+
+
+
+* 실제 코딩 시에 사용되는 코드
+
+body {-webkit-text-size-adjust: none;-moz-text-size-adjust: none;-ms-text-size-adjust: none;}
+
+
+
+출처: https://mjsin10.tistory.com/32 [GoodCoder]
